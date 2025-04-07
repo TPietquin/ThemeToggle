@@ -31,46 +31,9 @@ Pour utiliser le système de thème dans votre application React:
 
 Enveloppez votre application avec le ThemeProvider:
 
-jsxCopierimport { ThemeProvider } from "./theme/ThemeContext";
+Utilisez le hook useTheme pour accéder au thème et à la fonction de basculement.
 
-function App() {
-    return (
-        <ThemeProvider>
-            <YourAppComponents />
-        </ThemeProvider>
-    );
-}
-
-Utilisez le hook useTheme pour accéder au thème et à la fonction de basculement:
-
-jsxCopierimport { useTheme } from "./theme/useTheme";
-
-function MyComponent() {
-    const { theme, isDarkMode, toggleTheme } = useTheme();
-    
-    return (
-        <div style={{ backgroundColor: theme.background, color: theme.textPrimary }}>
-            <button onClick={toggleTheme}>
-                {isDarkMode ? "Mode clair" : "Mode sombre"}
-            </button>
-        </div>
-    );
-}
-
-
-Utilisez le composant ThemeToggle pour ajouter un bouton de basculement préconfiguré:
-
-jsxCopierimport ThemeToggle from "./components/ThemeToggle";
-
-function Header() {
-    return (
-        <header>
-            <h1>Mon Application</h1>
-            <ThemeToggle />
-        </header>
-    );
-}
-
+Utilisez le composant ThemeToggle pour ajouter un bouton de basculement préconfiguré.
 
 🎨 Personnalisation des thèmes
 

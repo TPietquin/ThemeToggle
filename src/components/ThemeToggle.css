@@ -1,0 +1,93 @@
+
+.theme-toggle-button {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: none;
+    outline: none;
+}
+
+.theme-toggle-button.light {
+    background-color: #F1F8FF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button.light:hover {
+    background-color: #DBEEFF;
+}
+
+.theme-toggle-button.dark {
+    background-color: #21262D;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle-button.dark:hover {
+    background-color: #30363D;
+}
+
+.icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.sun-moon-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.theme-toggle-button.light .sun-moon-icon {
+    background-color: #FFBC2C;
+    box-shadow: 0 0 8px #FFBC2C;
+}
+
+.theme-toggle-button.light .sun-moon-icon::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: radial-gradient(circle, transparent 40%, #FFBC2C 40%, #FFBC2C 60%, transparent 60%);
+}
+
+.theme-toggle-button.dark .sun-moon-icon {
+    background-color: #C9D1D9;
+    box-shadow: 0 0 8px rgba(201, 209, 217, 0.3);
+    transform: scale(0.8);
+}
+
+.theme-toggle-button.dark .sun-moon-icon::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #21262D;
+    box-shadow:
+            -5px 2px 0 #21262D,
+            3px 7px 0 #21262D;
+}
+
+.theme-toggle-button .sun-moon-icon {
+    transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.theme-toggle-button.light .sun-moon-icon {
+    transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle-button.dark .sun-moon-icon {
+    transform: rotate(360deg) scale(0.8);
+}
